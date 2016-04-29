@@ -12,6 +12,7 @@ so,
 1- Add Jquery in your html page scripts
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="fileuploader.js"></script>
 ```
 2- You want to update the following variables on fileuploader.js file.
 ```javascript
