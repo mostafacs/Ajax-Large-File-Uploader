@@ -1,7 +1,7 @@
 # Ajax Large File Uploader
 
 I create this project to upload a very large file. by splitting the file on client side and upload every part to the backend service which merge append every part to the file.
-[More Information](http://en.wikipedia.org/wiki/Decision_tree)
+
 
 # Setup on your project
 
