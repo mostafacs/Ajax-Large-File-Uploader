@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax File Uploader Demo</title>
+    <script src="/fileuploader/fileuploader.handler.js"></script>
+</head>
+    <body style="direction: rtl" >
+    <h1>Welcome in Ajax Large File Uploader</h1>
+
+    <input type="file" id="fileID"> <button onclick="upload()">upload</button>
+   
+
+
+
+    <script>
+
+        function upload(){
+
+            var file= document.getElementById("fileID").files[0];
+
+	    var backendUrl = "/admin/upload"; // Backend Url that handle uploaded chuncks
+	    var filePartSize = "100000"; // the size in 
+
+	    var partUploadHandler = function(percent){
+                console.log("upload part = "+percent);
+            };
+
+	
+	    var uploadCompleteHandler = function(result){
+               alert("upload done! = "+JSON.stringify(result));
+                $("#uploadsUrls").append("<p>url : "+result.url+"</p>")
+            };
+
+            var uploader = AjaxUploader.createUploader(backendUrl, filePartSize, partUploadHandler, uploadCompleteHandler);
+            uploader.upload(file);
+        }
+
+    </script>
+
+</body>
+</html>
